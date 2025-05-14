@@ -3,6 +3,7 @@ import numpy as np
 import pandas as pd
 import os
 from tqdm import tqdm
+import joblib
 from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import train_test_split
 from tensorflow.keras.utils import to_categorical
@@ -130,6 +131,7 @@ def train_model():
     
     # Save the model
     model.save('fashion_recommender.h5')
+    joblib.dump(encoder, 'label_encoder.pkl')
     print("Model saved as fashion_recommender.h5")
     
     return model, encoder
