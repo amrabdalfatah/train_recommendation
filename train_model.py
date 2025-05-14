@@ -106,9 +106,9 @@ def train_model():
     
     # Split data
     X_train, X_test, y_train, y_test = train_test_split(
-        X, y_categorical, test_size=0.3, random_state=30)
+        X, y_categorical, test_size=0.2)
     X_train, X_val, y_train, y_val = train_test_split(
-        X_train, y_train, test_size=0.3, random_state=30)
+        X_train, y_train, test_size=0.2)
     
     # Create and compile model
     model = create_model(num_classes)
